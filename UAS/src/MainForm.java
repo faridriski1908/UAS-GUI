@@ -1,6 +1,7 @@
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
+
+import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 
 public class MainForm {
     private JPanel rootPanel;
@@ -29,7 +30,15 @@ public class MainForm {
     private JButton buttonHapusSemua;
     private JButton buttonKeluar;
 
+//    public int barang1(int harga1){
+//        int harga1 = 25.000;
+//    }
+
     public MainForm() {
+        int harga1 = 25000;
+        int harga2 = 50000;
+        int harga3 = 75000;
+
         buttonHapusSemua.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -39,12 +48,30 @@ public class MainForm {
                 txtBayar.setText("");
             }
         });
+        barang1RadioButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                txtBarang1.setText(Integer.toString(harga1));
+            }
+        });
+        barang2RadioButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                txtBarang2.setText(Integer.toString(harga2));
+            }
+        });
+        barang3RadioButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                txtBarang3.setText(Integer.toString(harga3));
+            }
+        });
     }
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("MainForm");
         frame.setContentPane(new MainForm().rootPanel);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
         frame.pack();
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
