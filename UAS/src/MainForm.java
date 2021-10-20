@@ -1,5 +1,7 @@
 import javax.swing.*;
-import java.awt.event.*;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 
@@ -31,13 +33,15 @@ public class MainForm {
     private JButton buttonKeluar;
 
     public MainForm() {
-        int input1 = txtInput1.getText(Integer.parseInt());
-        int input2 = txtInput2.getText(Integer.parseInt());
-        int input3 = txtInput3.getText(Integer.parseInt());
-        
-        int harga1 = 25000;
-        int harga2 = 50000;
-        int harga3 = 75000;
+
+        buttonTotal.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (txtInput1.getText().isEmpty() || txtInput2.getText().isEmpty() || txtInput3.getText().isEmpty()){
+                    JOptionPane.showMessageDialog(null, "Masukkan jumlah barang tidak boleh kosong", "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        });
 
         buttonHapusSemua.addActionListener(new ActionListener() {
             @Override
@@ -48,42 +52,7 @@ public class MainForm {
                 txtBayar.setText("");
             }
         });
-        barang1RadioButton.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                txtBarang1.setText(Integer.toString(harga1));
-            }
-        });
-        barang2RadioButton.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                txtBarang2.setText(Integer.toString(harga2));
-            }
-        });
-        barang3RadioButton.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                txtBarang3.setText(Integer.toString(harga3));
-            }
-        });
-        buttonTotal.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (txtInput1.getText().isEmpty() || txtInput2.getText().isEmpty() || txtInput3.getText().isEmpty()){
-                    JOptionPane.showMessageDialog(null, "Masukkan jumlah barang tidak boleh kosong", "Error", JOptionPane.ERROR_MESSAGE);
-                }
-            }
-        });
-        buttonUangAkhir.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (txtInput1.getText().isEmpty() || txtInput2.getText().isEmpty() || txtInput3.getText().isEmpty()){
-                    JOptionPane.showMessageDialog(null, "Masukkan jumlah barang tidak boleh kosong", "Error", JOptionPane.ERROR_MESSAGE);
-                }
-            }
-        });
     }
-
     public static void main(String[] args) {
         JFrame frame = new JFrame("MainForm");
         frame.setContentPane(new MainForm().rootPanel);
