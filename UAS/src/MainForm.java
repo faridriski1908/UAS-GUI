@@ -30,10 +30,6 @@ public class MainForm {
     private JButton buttonHapusSemua;
     private JButton buttonKeluar;
 
-//    public int barang1(int harga1){
-//        int harga1 = 25.000;
-//    }
-
     public MainForm() {
         int harga1 = 25000;
         int harga2 = 50000;
@@ -64,6 +60,22 @@ public class MainForm {
             @Override
             public void mouseClicked(MouseEvent e) {
                 txtBarang3.setText(Integer.toString(harga3));
+            }
+        });
+        buttonTotal.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (txtInput1.getText().isEmpty() || txtInput2.getText().isEmpty() || txtInput3.getText().isEmpty()){
+                    JOptionPane.showMessageDialog(null, "Masukkan jumlah barang tidak boleh kosong", "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        });
+        buttonUangAkhir.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (txtInput1.getText().isEmpty() || txtInput2.getText().isEmpty() || txtInput3.getText().isEmpty()){
+                    JOptionPane.showMessageDialog(null, "Masukkan jumlah barang tidak boleh kosong", "Error", JOptionPane.ERROR_MESSAGE);
+                }
             }
         });
     }
