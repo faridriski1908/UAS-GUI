@@ -31,6 +31,10 @@ public class MainForm {
     private JButton buttonKeluar;
 
     public MainForm() {
+        int input1 = txtInput1.getText(Integer.parseInt());
+        int input2 = txtInput2.getText(Integer.parseInt());
+        int input3 = txtInput3.getText(Integer.parseInt());
+        
         int harga1 = 25000;
         int harga2 = 50000;
         int harga3 = 75000;
