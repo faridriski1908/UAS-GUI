@@ -1,4 +1,6 @@
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class MainForm {
     private JPanel rootPanel;
@@ -26,6 +28,18 @@ public class MainForm {
     private JButton buttonUangAkhir;
     private JButton buttonHapusSemua;
     private JButton buttonKeluar;
+
+    public MainForm() {
+        buttonHapusSemua.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                txtInput1.setText("");
+                txtInput2.setText("");
+                txtInput3.setText("");
+                txtBayar.setText("");
+            }
+        });
+    }
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("MainForm");
