@@ -17,6 +17,7 @@
         </constraints>
         <properties>
           <font name="Tahoma" size="11" style="0"/>
+          <selected value="true"/>
           <text value="Barang 1"/>
         </properties>
       </component>
@@ -26,6 +27,8 @@
         </constraints>
         <properties>
           <font name="Tahoma" size="11" style="0"/>
+          <hideActionText value="false"/>
+          <selected value="false"/>
           <text value="Barang 2"/>
         </properties>
       </component>
@@ -35,6 +38,7 @@
         </constraints>
         <properties>
           <font name="Tahoma" size="11" style="0"/>
+          <selected value="false"/>
           <text value="Barang 3"/>
         </properties>
       </component>
@@ -137,7 +141,7 @@
           <editable value="false"/>
         </properties>
       </component>
-      <component id="b399c" class="javax.swing.JTextField" binding="txtTotalHarga">
+      <component id="b399c" class="javax.swing.JTextField" binding="txtTotalHarga3">
         <constraints>
           <grid row="5" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
             <preferred-size width="100" height="-1"/>
